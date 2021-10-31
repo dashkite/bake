@@ -8,10 +8,6 @@ import { convert } from "../src"
 import fixtures from "./fixtures"
 
 do -> 
-  string = string = "I choose to see the beauty."
-
-  console.log convert from: "utf8", to: "base64", string
-
 
   print await test "bake", [
 
