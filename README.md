@@ -1,5 +1,5 @@
 # bake
-Encoding Transformations Toolkit
+Universal JavaScript Encoding Transformations Toolkit
 
 "bake" (pronounced "bah-keh") is the romaji representation of a Japanese word meaning "change" or "tranform". This name is also a playful reference to [mojibake][], describing character encoding failures that result in unintended transformations.
 
@@ -14,7 +14,7 @@ npm i @dashkite/bake
 
 ## Usage
 
-DashKite writes with CoffeeScript, so that's what we'll use for examples, but `bake` is published as transpiled JavaScript.
+`bake` is designed around standard JavaScript interfaces, so you can use it freely in the browser or Node.js environments. And while DashKite writes with CoffeeScript, and that's what you'll see in examples, `bake` is published as transpiled JavaScript.
 
 ```coffeescript
 import { convert } from "@dashkite/bake"
@@ -27,7 +27,20 @@ message = convert from: "utf8", to: "base64", string
 # SSBjaG9vc2UgdG8gc2VlIHRoZSBiZWF1dHku
 ```
 
-`convert` accepts a specification and some data to work with. It will read the `from` and `to` properties of that spec and convert the data for you, if it knows how.
+## API
+
+### convert
+
+```
+convert (specification, data) -> transformedData
+```
+
+`convert` accepts a `specification` and some `data` to work with. It will read the `from` and `to` properties of the `specification` and output `transformedData` for you, if it knows how.
+
+The `specification` is an obect with the properties:
+
+- `from`: The starting format of `data`
+- `to`: The desired format of `transformedData`
 
 ## Available Formats
 

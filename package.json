@@ -1,7 +1,7 @@
 {
   "name": "@dashkite/bake",
   "version": "0.0.2",
-  "description": "Encoding Transformations Toolkit",
+  "description": "Universal JavaScript Encoding Transformations Toolkit",
   "exports": {
     ".": {
       "node": "./build/node/src/index.js",
@@ -24,7 +24,16 @@
     "type": "git",
     "url": "git+https://github.com/dashkite/bake.git"
   },
-  "keywords": [],
+  "keywords": [ 
+    "encoding",
+    "base36",
+    "base16", 
+    "base64",
+    "base64url",
+    "json",
+    "uri",
+    "utf8"
+  ],
   "contributors": [
     {
       "name": "Dan Yoder",
