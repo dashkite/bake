@@ -1,6 +1,6 @@
 {
   "name": "@dashkite/bake",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Universal JavaScript Encoding Transformations Toolkit",
   "exports": {
     ".": {
@@ -24,10 +24,10 @@
     "type": "git",
     "url": "git+https://github.com/dashkite/bake.git"
   },
-  "keywords": [ 
+  "keywords": [
     "encoding",
     "base36",
-    "base16", 
+    "base16",
     "base64",
     "base64url",
     "json",
