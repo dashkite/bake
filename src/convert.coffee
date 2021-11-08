@@ -44,4 +44,11 @@ convert = Fn.curry (spec, value) ->
 
   encode decode value
 
-export { convert }
+supportedEncodings = Object.keys Encoders
+isSupportedEncoding = (x) -> x in supportedEncodings
+
+export { 
+  convert, 
+  supportedEncodings, 
+  isSupportedEncoding 
+}
