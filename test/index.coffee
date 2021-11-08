@@ -2,81 +2,53 @@ import assert from "@dashkite/assert"
 import { test, success } from "@dashkite/amen"
 import print from "@dashkite/amen-console"
 
-import * as _ from "@dashkite/joy"
-
 import { convert } from "../src"
-import fixtures from "./fixtures"
 
 do -> 
 
   print await test "bake", [
 
-    test "base16", [
-      test "encoding", ->
-        assert.equal fixtures.base16,
-          convert from: "utf8", to: "base16", fixtures.utf8
+    test "base16", ->
+      value = "cc002db4fd47f2da3eb570f08c485dbb54fea3a1acfe6617b0d60942ab9660a7"
+      assert.equal value,
+        convert from: "base16", to: "base16", value
+      
+      assert.equal value,
+        convert from: "hex", to: "hex", value
 
-        test "encoding", ->
-        assert.equal fixtures.base16,
-          convert from: "utf8", to: "hex", fixtures.utf8
+    test "base36", ->
+      value = "1ixo1ao49a2mepiqb5e"
+      assert.equal value,
+          convert from: "base36", to: "base36", value
 
-      test "decoding", ->
-        assert.equal fixtures.utf8,
-          convert from: "base16", to: "utf8", fixtures.base16
+    test "base64", ->
+      value = "zoTLqrAJtn4o3XbzL0/SaWo8Be8CbWI2H7g6+aetmXw="
+      assert.equal value,
+        convert from: "base64", to: "base64", value
 
-        assert.equal fixtures.utf8,
-          convert from: "hex", to: "utf8", fixtures.base16
-    ]
+    test "base64url", ->
+      value = "zoTLqrAJtn4o3XbzL0/SaWo8Be8CbWI2H7g6+aetmXw="
+      safe  = "zoTLqrAJtn4o3XbzL0_SaWo8Be8CbWI2H7g6-aetmXw"
+      assert.equal safe,
+          convert from: "base64", to: "base64url", value
 
-    test "base36", [
-      test "encoding", ->
-        assert.equal fixtures.base36,
-          convert from: "utf8", to: "base36", fixtures.utf8
+      assert.equal safe,
+          convert from: "base64url", to: "safe-base64", safe
 
-      test "decoding", ->
-        assert.equal fixtures.utf8,
-          convert from: "base36", to: "utf8", fixtures.base36
-    ]
+    test "json", ->
+      value = "\"Hello, World!\""
+      assert.equal value,
+          convert from: "json", to: "json", value
 
-    test "base64", [
-      test "encoding", ->
-        assert.equal fixtures.base64,
-          convert from: "utf8", to: "base64", fixtures.utf8
+    test "uri", ->
+      value = "%22Hello%20World!%22"
+      assert.equal value,
+          convert from: "uri", to: "uri", value
 
-      test "decoding", ->
-        assert.equal fixtures.utf8,
-          convert from: "base64", to: "utf8", fixtures.base64
-    ]
-
-    test "base64url", [
-      test "encoding", ->
-        assert.equal fixtures.base64url,
-          convert from: "utf8", to: "base64url", fixtures.utf8
-
-      test "decoding", ->
-        assert.equal fixtures.utf8,
-          convert from: "base64url", to: "utf8", fixtures.base64url
-    ]
-
-    test "json", [
-      test "encoding", ->
-        assert.equal fixtures.json,
-          convert from: "utf8", to: "json", fixtures.utf8
-
-      test "decoding", ->
-        assert.equal fixtures.utf8,
-          convert from: "json", to: "utf8", fixtures.json
-    ]
-
-    test "uri", [
-      test "encoding", ->
-        assert.equal fixtures.uri,
-          convert from: "utf8", to: "uri", fixtures.utf8
-
-      test "decoding", ->
-        assert.equal fixtures.utf8,
-          convert from: "uri", to: "utf8", fixtures.uri
-    ]
+    test "utf8", ->
+      value = "\"Hello, World!\""
+      assert.equal value,
+        convert from: "utf8", to: "utf8", value
       
   ]
 

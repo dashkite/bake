@@ -9,7 +9,7 @@ bytesToBigInt = (bytes) ->
 
   result
 
-# Takes iterable and outputs its equivalent BitInt instance.
+# Takes string and outputs its equivalent BigInt instance, up to base36.
 stringToBigInt = (string, base) ->
   result = 0n
   power = string.length - 1

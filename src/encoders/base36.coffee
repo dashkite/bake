@@ -5,11 +5,11 @@
 
 # TODO: Evaluate the performance more rigorously.
 
-import * as Ty from "@dashkite/joy/type"
+import { isType, isString } from "@dashkite/joy/type"
 import { decodeBase16 } from "./base16"
 import { bytesToBigInt, stringToBigInt } from "./helpers"
 
-isUint8Array = Ty.isType Uint8Array
+isUint8Array = isType Uint8Array
 
 encodeBase36 = (bytes) ->
   if !(isUint8Array bytes)
@@ -19,7 +19,7 @@ encodeBase36 = (bytes) ->
 
 
 decodeBase36 = (string) ->
-  if !(Ty.isString string)
+  if !(isString string)
     throw new Error "Input is not a String."
 
   # Carefully get the string into memory without losing precision.

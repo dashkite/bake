@@ -14,6 +14,7 @@ Encoders =
   base36: encodeBase36
   base64: encodeBase64
   base64url: encodeBase64URL
+  "safe-base64": encodeBase64URL
   hex: encodeBase16
   json: Fn.pipe [ encodeUTF8, encodeJSON ]
   uri: Fn.pipe [ encodeUTF8, encodeURI ]
@@ -25,6 +26,7 @@ Decoders =
   base36: decodeBase36
   base64: decodeBase64
   base64url: decodeBase64URL
+  "safe-base64": decodeBase64URL
   hex: decodeBase16
   json: Fn.pipe [ decodeJSON, decodeUTF8 ]
   uri: Fn.pipe [ decodeURI, decodeUTF8 ]

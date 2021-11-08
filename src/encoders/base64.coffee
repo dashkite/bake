@@ -16,7 +16,7 @@ decodeBase64URL = (string) ->
       when 2 then "=="
       else ""
   
-  decodeBase64 string.replace(/\-/g, '+').replace(/\_/g, '/') + padding
+  decodeBase64 ( string.replace(/\-/g, '+').replace(/\_/g, '/') + padding )
 
 
 export {

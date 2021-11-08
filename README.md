@@ -47,7 +47,7 @@ The `specification` is an obect with the properties:
 - base16 / hex 
 - base36
 - base64
-- base64url
+- base64url / safe-base64
 - bytes
 - json
 - utf8
@@ -55,7 +55,7 @@ The `specification` is an obect with the properties:
 
 ### Format Notes
 
-- `base64url` is based on RFC 4648's ["base64url"](https://tools.ietf.org/html/rfc4648#section-5) mapping.
+- `base64url` / `safe-base64` is based on RFC 4648's ["base64url"](https://tools.ietf.org/html/rfc4648#section-5) mapping.
 - `base36` is less common than base64 and base16, but it's a useful format. Like `base64`, this format has the advantage of compact expression, but `base36` is always URL-safe and uses only lower-case, making it attractive for identifiers.
 - `bytes` refers to an instance of [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
 - `json` refers to JSON string encoding as applied to UTF8 strings. Do not use this to generally stringify data structures.
