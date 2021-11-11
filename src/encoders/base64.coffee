@@ -1,4 +1,4 @@
-import { decode as decodeBase64, encode as encodeBase64 } from "@stablelib/base64"
+import { decode as decodeBase64, encode as encodeBase64 } from "@dashkite/base64"
 
 # Based on RFC 4648's "base64url" mapping:
 # https://tools.ietf.org/html/rfc4648#section-5

@@ -5,4 +5,4 @@
 # and so encode and decode are relative to application developer-specified formats.
 # So here, we export functions with a reversed naming convention. 
 
-export { encode as decodeUTF8, decode as encodeUTF8 } from "@stablelib/utf8"
+export { encode as decodeUTF8, decode as encodeUTF8 } from "@dashkite/utf8"
